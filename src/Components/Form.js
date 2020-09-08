@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Error from './Error';
 import shortid from 'shortid'
 
-const Form = () => {
+const Form = ({addNewExpense}) => {
     const[name, setName] = useState('');
     const[number, setNumber] = useState(0);
     const[error, setError] = useState(false);
@@ -22,9 +22,12 @@ const Form = () => {
             number,
             id: shortid.generate()
         }
-
-        console.log(expense);
+    // adding the expense to app component 
+        addNewExpense(expense)
     
+    // reset form
+    setName('');
+    setNumber(0);
     }
     
 
