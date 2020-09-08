@@ -2,7 +2,7 @@ import React,{Fragment,useState} from 'react';
 import Error from './Error';
 
 
-const Questions = ({setBudget, setRest}) => {
+const Questions = ({setBudget, setRest, setShowQuestion}) => {
     // define State
     const [amount, setAmount] = useState(0);
     const [error, setError] = useState(false);
@@ -26,6 +26,7 @@ const Questions = ({setBudget, setRest}) => {
         // Setup budget and rest
         setBudget(amount);
         setRest(amount);
+        setShowQuestion(false);
 
      }
 
