@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Error from './Error';
+import shortid from 'shortid'
 
 const Form = () => {
     const[name, setName] = useState('');
@@ -10,12 +11,25 @@ const Form = () => {
         e.preventDefault();
         
         // validation
-        if(number < 1 || isNaN() || name.trim() === ''){
+        if(number < 1 || isNaN(number) || name.trim() === ''){
             setError(true);
             return;
         }
         setError(false);
-    } 
+    // build expense
+        const expense = {
+            name,
+            number,
+            id: shortid.generate()
+        }
+
+        console.log(expense);
+    
+    }
+    
+
+  
+
 
     return (
         <form onSubmit={addExpenses}>
