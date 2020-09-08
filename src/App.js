@@ -1,14 +1,16 @@
 import React from 'react';
-import './App.css';
+import Questions from './Components/Questions';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div className="container">
+      <header>
+      <h1>Budget</h1>
       </header>
+      <div className='contenido-principal contenido'>
+      <Questions/>
+      </div>
     </div>
   );
 }
