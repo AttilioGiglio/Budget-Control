@@ -2,10 +2,10 @@ import React,{Fragment,useState} from 'react';
 import Error from './Error';
 
 
-const Questions = () => {
+const Questions = ({setBudget, setRest}) => {
     // define State
     const [amount, setAmount] = useState(0);
-    const [error, stateError] = useState(false);
+    const [error, setError] = useState(false);
     
     // Function to read budget defined
     const readBudget = (e) => {
@@ -23,18 +23,21 @@ const Questions = () => {
         }
         // passed validation
         setError(false);
+        // Setup budget and rest
+        setBudget(amount);
+        setRest(amount);
 
      }
 
     return (
         <Fragment>
-            <h2>Questions</h2>
-            {error ? <Error /> : null}
+            <h2>Define your budget</h2>
+            {error ? <Error mensaje='Incorrect Budget' /> : null}
             <form onSubmit={addBudget}>
                 <input 
                 type='number'
                 className='u-full-width'
-                placeholder='Coloca tu presupuesto'
+                placeholder='Choose your budget'
                 onChange={readBudget}
                 />
                 <input 

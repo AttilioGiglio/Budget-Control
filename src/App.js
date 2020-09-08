@@ -1,15 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Questions from './Components/Questions';
 
 
 function App() {
+  const [budget,setBudget] = useState(0);
+  const [rest, setRest] = useState(0);
+
   return (
     <div className="container">
       <header>
-      <h1>Budget</h1>
+      <h1>Week Expenses</h1>
       </header>
       <div className='contenido-principal contenido'>
-      <Questions/>
+      <Questions
+      setBudget={setBudget}
+      setRest={setRest}
+      />
       </div>
     </div>
   );
