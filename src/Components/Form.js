@@ -1,8 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Form = () => {
+    const[name, setName] = useState('');
+    const[number, setNumber] = useState(0);
+
+    const addExpenses = (e) =>{
+        e.preventDefault();
+        console.log(name,number)
+    } 
+
     return (
-        <form>
+        <form onSubmit={addExpenses}>
             <h2>Add your expenses</h2>
             <div className='campo'>
                 <label>Expense Name</label>
@@ -10,6 +18,7 @@ const Form = () => {
                 type='text'
                 className='u-full-width'
                 placeholder='Ex: Food and suppliers'
+                onChange={(e) => setName(e.target.value)}
                 />
             </div>
             <div className='campo'>
@@ -18,6 +27,7 @@ const Form = () => {
                 type='number'
                 className='u-full-width'
                 placeholder='Ex: 300'
+                onChange={(e) => setNumber(parseInt(e.target.value))}
                 />
             </div>
             <input 
