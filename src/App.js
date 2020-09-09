@@ -26,7 +26,7 @@ function App() {
     setCreateExpense(false);
   }
   }
-    , [expense])
+    , [expense, createExpense, expenses, rest, showQuestion, budget])
 
   // // When we add a new expense
   // const addNewExpense = expense => {
