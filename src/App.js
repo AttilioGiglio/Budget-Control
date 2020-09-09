@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Questions from './Components/Questions';
 import Form from './Components/Form';
 import List from './Components/List';
+import BudgetControl from './Components/BudgetControl';
 
 
 function App() {
@@ -10,10 +11,10 @@ function App() {
   const [showQuestion, setShowQuestion] = useState(true);
   const [expenses, setExpenses] = useState([]);
 
-// When we add a new expense
-const addNewExpense = expense => {
-  setExpenses([...expenses, expense])
-}
+  // When we add a new expense
+  const addNewExpense = expense => {
+    setExpenses([...expenses, expense])
+  }
 
   return (
     <div className="container">
@@ -33,15 +34,19 @@ const addNewExpense = expense => {
 
             <div className='row'>
               <div className='one-half column'>
-                <Form 
-                addNewExpense={addNewExpense}
+                <Form
+                  addNewExpense={addNewExpense}
                 />
               </div>
               <div className='one-half column'>
-                <List 
-                expenses={expenses}
+                <List
+                  expenses={expenses}
                 />
-        </div>
+                <BudgetControl 
+                budget={budget}
+                rest={rest}
+                />
+              </div>
             </div>
           )
         }
