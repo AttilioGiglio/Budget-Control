@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Error from './Error';
 import shortid from 'shortid'
 
-const Form = ({addNewExpense}) => {
+const Form = ({setExpense, setCreateExpense}) => {
     const[name, setName] = useState('');
     const[number, setNumber] = useState(0);
     const[error, setError] = useState(false);
@@ -23,17 +23,13 @@ const Form = ({addNewExpense}) => {
             id: shortid.generate()
         }
     // adding the expense to app component 
-        addNewExpense(expense)
+        setExpense(expense);
+        setCreateExpense(true);
     
     // reset form
     setName('');
     setNumber(0);
     }
-    
-
-  
-
-
     return (
         <form onSubmit={addExpenses}>
             <h2>Add your expenses</h2>
