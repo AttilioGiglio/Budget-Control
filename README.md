@@ -1,4 +1,4 @@
-Link to deployment: https://nifty-galileo-8eec54.netlify.app/
+Link to site: https://nifty-galileo-8eec54.netlify.app/ (Deployed with Netlify)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
